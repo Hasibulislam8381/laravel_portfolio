@@ -1,0 +1,121 @@
+<?php
+
+namespace App\Http\Controllers\Backend;
+
+use App\Http\Controllers\Controller;
+use App\Models\Partner;
+use Illuminate\Http\Request;
+
+class PartnerController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $activePartner = Partner::where('status', 'publish')->paginate(10);
+        $draftPartner = Partner::where('status', 'draft')->paginate(10);
+        $trashedPartner = Partner::onlyTrashed()->orderBy('id', 'desc')->paginate(10);
+        return view('backend.partner.index', compact('activePartner', 'draftPartner', 'trashedPartner'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $photo = $request->file('photo');
+        $request->validate([
+            'photo' => 'required|mimes:png,jpg,jpeg|max:2000',
+        ]);
+        if ($photo) {          
+            $folder = 'partner';
+            $response = cloudUpload($photo, $folder, null);
+            $photo = $response;
+        }
+        Partner::create([
+            'photo' => $photo,
+
+        ]);
+        return back()->with('success', 'Partner Added Successful!');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Partner $partner)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Partner $partner)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Partner $partner)
+    {
+        $request->validate([
+            'photo' => 'nullable|mimes:png,jpg,jpeg|max:2000',
+        ]);
+        
+        if ($request->has('photo')) {          
+            $folder = 'partner';
+            $response = cloudUpload($request->photo, $folder, $partner->photo);
+            $partner->photo = $response;
+        }
+        Partner::where('id', $request->id)->update([
+            'photo' => $partner->photo,
+
+        ]);
+        return back()->with('success', 'Partner Edited!');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Partner $partner)
+    {
+        $partner->status == 'draft';
+        $partner->save();
+        $partner->delete();
+        return back()->with('success', 'Partner Info Trashed');
+    }
+    public function status(Partner $partner)
+    {
+        if ($partner->status == 'publish') {
+            $partner->status = 'draft';
+            $partner->save();
+        } else {
+            $partner->status = 'publish';
+            $partner->save();
+        }
+        return back()->with('success', $partner->status == 'publish' ? 'Partner  info Published' : 'Partner Info Drafted');
+    }
+    public function reStore($id)
+    {
+        $partner = Partner::onlyTrashed()->find($id);
+        $partner->restore();
+        return back()->with('success', 'Partner Info Restored');
+    }
+    public function permDelete($id)
+    {
+        $partner = Partner::onlyTrashed()->find($id);
+        $partner->forceDelete();
+        return back()->with('success', 'Partner Info Deleted');
+    }
+}
