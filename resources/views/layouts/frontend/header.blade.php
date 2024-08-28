@@ -98,24 +98,28 @@
             <!-- socail link -->
             <ul class="bostami-parsonal-info-social-link mb-30">
                 <li>
-                    <a href="#" class="facebook">
+                    <a href="{{$generalInfo->facebook}}" class="facebook" target="__blank">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="twitter">
-                        <i class="fa-brands fa-twitter"></i>
+                    <a href="{{$generalInfo->github}}" class="twitter" target="__blank">
+                        <i class="fa-brands fa-github"></i>
+
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="linkedin">
+                    <a href="{{$generalInfo->linkedin}}" class="linkedin">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
+                   
+                </li>
+                <li>
+                    <a href="https://wa.me/{{$generalInfo->whatsapp}}?text={{ urlencode('Hello, I would like to discuss...') }}" target="_blank" rel="noopener noreferrer" class="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    
+                    
                 </li>
             </ul>
 
@@ -138,9 +142,9 @@
                     </div>
                     <div class="text">
                         <span>Email</span>
-                       <div class="text-white">
-                        {{$generalInfo->email  }}    
-                       </div> 
+                       <p> {{$generalInfo->email  }}</p>
+                           
+                      
                     </div>
                 </div>
 

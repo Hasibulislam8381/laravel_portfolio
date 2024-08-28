@@ -81,8 +81,8 @@
                                     </div>
                                     <div class="form-group col-lg-3">
                                         <b>Github:</b>
-                                        <input type="text" name="instagram" class=" form-control mt-2"
-                                            value="{{ $generalInfo->instagram }}">
+                                        <input type="text" name="github" class=" form-control mt-2"
+                                            value="{{ $generalInfo->github }}">
                                     </div>
                                     <div class="form-group col-lg-3">
                                         <b>LinkedIn:</b>

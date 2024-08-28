@@ -101,6 +101,7 @@ class GeneralInfoController extends Controller
             'footer_logo' => $generalInfo->footer_logo,
             'footer_des' => $request->footer_des,
             'facebook' => $request->facebook,
+            'github' => $request->github,
             'instagram' => $request->instagram,
             'linkedin' => $request->linkedin,
             'youtube' => $request->youtube,

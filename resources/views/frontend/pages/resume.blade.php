@@ -16,25 +16,25 @@
             <!-- education -->
             <div class="col-xl-6 col-lg-7">
                 <div class="bostami-section-title-wrap mb-20">
-                    <h4 class="section-title"><i class="fa-light fa-school"></i>Education</h4>
+                    <h4 class="section-title"><i style="padding-right: 8px" class="fa-solid fa-user-graduate"></i>Education</h4>
                 </div>
 
                 <div class="bostami-card-wrap">
                     <div class="bostami-card-item bg-prink mb-20">
-                        <span class="card-subtitle">2021-2024</span>
-                        <h6 class="card-title">Ph.D in Horriblensess <span>- University,</span></h6>
-                        <p class="card-text">Los Angeles, CA</p>
+                        <span class="card-subtitle">2018-2022</span>
+                        <h6 class="card-title">BSC in CSE <span>-IUBAT University,</span></h6>
+                        <p class="card-text">Dhaka,Bangladesh</p>
                     </div>
 
                     <div class="bostami-card-item bg-catkrill mb-20">
-                        <span class="card-subtitle">2017-2021</span>
-                        <h6 class="card-title">Computer Science <span>- Imperialize</span></h6>
-                        <p class="card-text">Technical Institute</p>
+                        <span class="card-subtitle">2016-2017</span>
+                        <h6 class="card-title">Higher Secondary School Certificate<span>- Mohipur Govt. Collage</span></h6>
+                        <p class="card-text">Panchbibi,Joypurhat</p>
                     </div>
 
                     <div class="bostami-card-item bg-prink">
-                        <span class="card-subtitle">2015-2017</span>
-                        <h6 class="card-title">Graphic Designer <span>- Web Graphy,</span></h6>
+                        <span class="card-subtitle">2014-2015</span>
+                        <h6 class="card-title">Secondary School Certificate <span>-Banglahili Pilot School And Collage,</span></h6>
                         <p class="card-text">Los Angeles, CA</p>
                     </div>
                 </div>
@@ -46,25 +46,25 @@
             <!-- education -->
             <div class="col-xl-6 col-lg-5">
                 <div class="bostami-section-title-wrap mb-20">
-                    <h4 class="section-title"><i class="fa-light fa-briefcase"></i>experience</h4>
+                    <h4 class="section-title"><i style="padding-right: 8px" class="fa-solid fa-briefcase"></i>experience</h4>
                 </div>
 
                 <div class="bostami-card-item bg-catkrill  mb-20">
-                    <span class="card-subtitle">2019 - Present</span>
-                    <h6 class="card-title">Sr. Software Tester</h6>
-                    <p class="card-text">Google Inc.</p>
+                    <span class="card-subtitle">2023 - Present</span>
+                    <h6 class="card-title">Jr. Software Developer</h6>
+                    <p class="card-text">Techdyno Bd Ltd.</p>
                 </div>
 
                 <div class="bostami-card-item bg-prink mb-20">
-                    <span class="card-subtitle">2015-2017</span>
-                    <h6 class="card-title">Cr. Web Developer</h6>
-                    <p class="card-text">elite-themes24 ltd.</p>
+                    <span class="card-subtitle">2023(Mar-Oct)</span>
+                    <h6 class="card-title">Intern Fullstack Laravel Developer</h6>
+                    <p class="card-text">Techdyno Bd Ltd.</p>
                 </div>
 
                 <div class="bostami-card-item bg-catkrill ">
-                    <span class="card-subtitle">2014 - 2015</span>
-                    <h6 class="card-title">Jr. Web Developer</h6>
-                    <p class="card-text">Creative Gigs.</p>
+                    <span class="card-subtitle">2022(Aug-Dec)</span>
+                    <h6 class="card-title">Intern Php Developer</h6>
+                    <p class="card-text">Pioneer Alpha.</p>
                 </div>
 
             </div>
@@ -86,10 +86,10 @@
                     <div class="skill-bar-item mb-30">
                         <div class="title-wrap">
                             <h5 class="title">Web Design</h5>
-                            <span class="count">85%</span>
+                            <span class="count">98%</span>
                         </div>
                         <div class="progress-bar-wrap">
-                            <div class="progress-line progress-bg-1" style="width: 85%;">
+                            <div class="progress-line progress-bg-1" style="width: 98%%;">
                             </div>
                         </div>
                     </div>
@@ -157,8 +157,7 @@
 
     <!-- footer copyright -->
     <div class="footer-copyright text-center pt-25 pb-25">
-        <span>© 2024 All Rights Reserved by <a href="https://themeforest.net/user/elite-themes24"
-                target="_blank" rel="noopener noreferrer">elite-themes24</a>.</span>
+        <span>©{{ $generalInfo->copyright_text }}</span>
     </div>
 
 </div>
