@@ -35,7 +35,6 @@
                                                 <th>Id</th>
                                                 <th>Photo</th>
                                                 <th>Name</th>
-                                                <th>Title</th>
                                                 <th>Description</th>
                                                 <th>Action</th>
                                             </tr>
@@ -49,10 +48,9 @@
                                                         <img src="{{ $subArea->photo }}" width="60" alt="{{ $subArea->alt_text }}">
                                                     </td>
                                                     <td>{{ $subArea->name }}</td>
-                                                    <td>{{ $subArea->title }}</td>
                                                     <td>{!! Str::limit($subArea->description, 100) !!}</td>
                                                     <td class="td_btn">
-                                                        <a href="{{ route('backend.subArea.edit',$subArea->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                                        <a href="{{ route('backend.area.edit',$subArea->id) }}" class="btn btn-sm btn-info">Edit</a>
                                                         <a href="{{ route('backend.subArea.status', $subArea->id) }}"
                                                             class=" btn {{ $subArea->status == 'publish' ? 'btn btn-warning' : 'btn btn-success' }}">{{ $subArea->status == 'publish' ? 'Draft' : 'Publish' }}</a>
                                                         <a href="{{ route('backend.subArea.trash', $subArea->id) }}"
@@ -85,7 +83,6 @@
                                                 <th>Id</th>
                                                 <th>Photo</th>
                                                 <th>Name</th>
-                                                <th>Title</th>
                                                 <th>Description</th>
                                                 <th>Action</th>
                                             </tr>
@@ -99,7 +96,6 @@
                                                         <img src="{{ $subArea->photo }}" width="60" alt="{{ $subArea->alt_text }}">
                                                     </td>
                                                     <td>{{ $subArea->name }}</td>
-                                                    <td>{{ $subArea->title }}</td>
                                                     <td>{!! Str::limit($subArea->description, 100) !!}</td>
                                                     <td class="td_btn">
                                                         <a href="{{ route('backend.subArea.edit',$subArea->id) }}" class="btn btn-sm btn-info">Edit</a>
@@ -141,7 +137,6 @@
                                                 <th>Id</th>
                                                 <th>Photo</th>
                                                 <th>Name</th>
-                                                <th>Title</th>
                                                 <th>Description</th>
 
                                                 <th>Action</th>
@@ -155,7 +150,6 @@
                                                         <img src="{{ $subArea->photo }}" width="60" alt="{{ $subArea->alt_text }}">
                                                     </td>
                                                     <td>{{ $subArea->name }}</td>
-                                                    <td>{{ $subArea->title }}</td>
                                                     <td>{!! Str::limit($subArea->description, 100) !!}</td>
 
                                                     <td class="td_btn">

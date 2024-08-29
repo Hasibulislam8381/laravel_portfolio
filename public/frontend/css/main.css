@@ -3325,6 +3325,18 @@ textarea:focus::placeholder {
 .progress-bg-4 {
     background-color: #ca56f2;
 }
+.progress-bg-5 {
+    background-color: #00ce1b;
+}
+.progress-bg-6 {
+    background-color: #009ece;
+}
+.progress-bg-7 {
+    background-color: #ce2900;
+}
+.progress-bg-8 {
+    background-color: #ceaf00;
+}
 
 .knowledeges-item-wrap .gk-item {
     display: inline-block;

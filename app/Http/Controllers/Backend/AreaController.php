@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Area;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Area;
+use App\Models\RequirementType;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AreaController extends Controller
 {
@@ -64,7 +65,10 @@ class AreaController extends Controller
      */
     public function edit(Area $area)
     {
-        //
+   
+        $project_type = RequirementType::all();
+        return view('backend.area.edit', compact('project_type','area'));
+    
     }
 
     /**
@@ -81,8 +85,12 @@ class AreaController extends Controller
             $response = cloudUpload($request->photo, $folder, $area->photo);
             $area->photo = $response;
         }
-        Area::where('id', $request->id)->update([
+        $area->update([
             'name' => $request->name,
+            'url' => $request->url,
+            'language' => $request->language,
+            'project_type_id' => $request->project_type_id,
+            'alt_text' => $request->alt_text,
             'slug' => Str::slug($request->name),
             'photo' => $area->photo,
 

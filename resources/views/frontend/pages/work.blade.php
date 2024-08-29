@@ -15,6 +15,7 @@
 
             <div class="col-12">
                 <ul class="fillter-btn-wrap buttonGroup isotop-menu-wrapper mb-30">
+
                     <li class="fillter-btn is-checked " data-filter="*">All</li>
                     <li class="fillter-btn" data-filter=".mockup">Mockup</li>
                     <li class="fillter-btn" data-filter=".design"> Graphic Design</li>
@@ -139,7 +140,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-bs-dismiss="modal">
-                    <i class="far fa-times"></i>
+                    <i class="fa-solid fa-circle-xmark"></i>
                 </button>
             </div>
 

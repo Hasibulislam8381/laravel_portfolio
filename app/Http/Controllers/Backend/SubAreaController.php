@@ -7,6 +7,7 @@ use App\Models\SubArea;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\RequirementType;
 
 class SubAreaController extends Controller
 {
@@ -15,9 +16,9 @@ class SubAreaController extends Controller
      */
     public function index()
     {
-        $activeSarea = SubArea::where('status', 'publish')->where('section', 'top')->paginate(10);
-        $draftSarea = SubArea::where('status', 'draft')->where('section', 'top')->paginate(10);
-        $trashedSarea = SubArea::onlyTrashed()->where('section', 'top')->orderBy('id', 'desc')->paginate(10);
+        $activeSarea = Area::where('status', 'publish')->paginate(10);
+        $draftSarea = Area::where('status', 'draft')->paginate(10);
+        $trashedSarea = Area::onlyTrashed()->orderBy('id', 'desc')->paginate(10);
         return view('backend.subArea.index', compact('activeSarea', 'draftSarea', 'trashedSarea'));
     }
     public function indexBottom()
@@ -34,7 +35,8 @@ class SubAreaController extends Controller
     public function create()
     {
         $areas = Area::get();
-        return view('backend.subArea.create', compact('areas'));
+        $project_type = RequirementType::all();
+        return view('backend.subArea.create', compact('areas',"project_type"));
     }
     public function createBottom()
     {
@@ -47,9 +49,11 @@ class SubAreaController extends Controller
      */
     public function store(Request $request)
     {
+    
         $request->validate([
             'name' => 'required',
             'photo' => 'required|mimes:png,jpg,jpeg|max:2000',
+
         ]);
         $photo = $request->file('photo');
         if ($photo) {
@@ -64,15 +68,18 @@ class SubAreaController extends Controller
             $meta_photo = $response;
         }
 
-        SubArea::create([
+        Area::create([
             'area_id' => 1,
             'name' => $request->name,
+            'url' => $request->url,
+            'language' => $request->language,
             'alt_text' => $request->alt_text,
             'title' => $request->title,
             'description' => $request->description,
             'photo' => $photo,
             'video' => $request->video,
             'section' => 'top',
+            'project_type_id'=> $request->project_type_id,
             
             'm_photo' => $meta_photo,
             'm_alt_text' => $request->m_alt_text,
@@ -81,7 +88,7 @@ class SubAreaController extends Controller
             'm_description' => $request->m_description,
             'custom_header' => $request->header_text,
         ]);
-        return back()->with('success', 'Sub Area Top Section Added Successful!');
+        return back()->with('success', 'Project Added Successful!');
     }
     public function storeBottom(Request $request)
     {
@@ -124,10 +131,12 @@ class SubAreaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SubArea $subArea)
+    public function edit(Request $request, SubArea $subArea)
     {
+      
         $areas = Area::get();
-        return view('backend.subArea.edit', compact('subArea', 'areas'));
+        $project_type = RequirementType::all();
+        return view('backend.subArea.edit', compact('areas','project_type'));
     }
     public function editBottom(SubArea $subArea)
     {
@@ -157,12 +166,16 @@ class SubAreaController extends Controller
         
         $subArea->update([
             'area_id' => 1,
+            'project_type_id'=> $request->project_type_id,
             'name' => $request->name,
+            'url' => $request->url,
+            'language' => $request->language,
             'alt_text' => $request->alt_text,
             'title' => $request->title,
             'description' => $request->description,
             'photo' => $subArea->photo,
             'video' => $request->video,
+            'url' => $request->url,
             'section' => 'top',
             
             

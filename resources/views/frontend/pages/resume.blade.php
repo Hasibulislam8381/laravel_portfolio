@@ -85,44 +85,84 @@
 
                     <div class="skill-bar-item mb-30">
                         <div class="title-wrap">
-                            <h5 class="title">Web Design</h5>
-                            <span class="count">98%</span>
+                            <h5 class="title">Html</h5>
+                            <span class="count">90%</span>
                         </div>
                         <div class="progress-bar-wrap">
-                            <div class="progress-line progress-bg-1" style="width: 98%%;">
+                            <div class="progress-line progress-bg-1" style="width: 90%;">
                             </div>
                         </div>
                     </div>
 
                     <div class="skill-bar-item mb-30">
                         <div class="title-wrap">
-                            <h5 class="title">Mobile App</h5>
-                            <span class="count">55%</span>
+                            <h5 class="title">Css & Bootstrap</h5>
+                            <span class="count">90%</span>
                         </div>
                         <div class="progress-bar-wrap">
-                            <div class="progress-line progress-bg-2" style="width: 55%;">
+                            <div class="progress-line progress-bg-2" style="width: 90%;">
                             </div>
                         </div>
                     </div>
 
                     <div class="skill-bar-item mb-30">
                         <div class="title-wrap">
-                            <h5 class="title">Illustrator</h5>
-                            <span class="count">65%</span>
+                            <h5 class="title">Javascript</h5>
+                            <span class="count">80%</span>
                         </div>
                         <div class="progress-bar-wrap">
-                            <div class="progress-line progress-bg-3" style="width: 65%;">
+                            <div class="progress-line progress-bg-3" style="width: 80%;">
                             </div>
                         </div>
                     </div>
 
-                    <div class="skill-bar-item">
+                    <div class="skill-bar-item mb-30">
                         <div class="title-wrap">
-                            <h5 class="title">Photoshope</h5>
-                            <span class="count">72%</span>
+                            <h5 class="title">Php & Laravel</h5>
+                            <span class="count">85%</span>
                         </div>
                         <div class="progress-bar-wrap">
-                            <div class="progress-line progress-bg-4" style="width: 72%;">
+                            <div class="progress-line progress-bg-4" style="width: 85%;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item mb-30">
+                        <div class="title-wrap">
+                            <h5 class="title">Database</h5>
+                            <span class="count">90%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-line progress-bg-5" style="width: 90%;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item mb-30">
+                        <div class="title-wrap">
+                            <h5 class="title">Datastructure & Algorithm</h5>
+                            <span class="count">70%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-line progress-bg-6" style="width: 70%;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item mb-30">
+                        <div class="title-wrap">
+                            <h5 class="title">Vue js</h5>
+                            <span class="count">75%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-line progress-bg-7" style="width: 75%;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item mb-30">
+                        <div class="title-wrap">
+                            <h5 class="title">Problem Solving</h5>
+                            <span class="count">85%</span>
+                        </div>
+                        <div class="progress-bar-wrap">
+                            <div class="progress-line progress-bg-8" style="width: 85%;">
                             </div>
                         </div>
                     </div>
@@ -138,13 +178,20 @@
                 </div>
 
                 <div class="knowledeges-item-wrap">
-                    <span class="gk-item">Digital Design</span>
-                    <span class="gk-item">Marketing</span>
-                    <span class="gk-item">Communication</span>
-                    <span class="gk-item">Social Media</span>
-                    <span class="gk-item">Time Management</span>
-                    <span class="gk-item">Flexibility</span>
-                    <span class="gk-item">Print</span>
+                    <span class="gk-item">PHP</span>
+                    <span class="gk-item">Laravel</span>
+                    <span class="gk-item">Design Pattern</span>
+                    <span class="gk-item">Javascript</span>
+                    <span class="gk-item">Vue Js</span>
+                    <span class="gk-item">Database</span>
+                    <span class="gk-item">AWS S3</span>
+                    <span class="gk-item">Bootstrap</span>
+                    <span class="gk-item">Tailwind Css</span>
+                    <span class="gk-item">Datastructure</span>
+                    <span class="gk-item">Algorithm</span>
+                    <span class="gk-item">Github</span>
+                    <span class="gk-item">Docker</span>
+                    <span class="gk-item">Html</span>
                 </div>
 
             </div>

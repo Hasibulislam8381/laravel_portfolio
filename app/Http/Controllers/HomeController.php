@@ -49,8 +49,8 @@ class HomeController extends Controller
         return view('frontend.pages.resume');
     }
     public function work(){
-
-        return view('frontend.pages.work');
+        $works = Area::all();
+        return view('frontend.pages.work',compact('works'));
     }
     public function blog(){
 
