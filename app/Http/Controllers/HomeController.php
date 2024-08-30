@@ -50,7 +50,8 @@ class HomeController extends Controller
     }
     public function work(){
         $works = Area::all();
-        return view('frontend.pages.work',compact('works'));
+        $project_types = RequirementType::all();
+        return view('frontend.pages.work',compact('works','project_types'));
     }
     public function blog(){
 

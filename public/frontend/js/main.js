@@ -113,6 +113,38 @@
             },
         });
     }
+    if (jQuery(".project_category_active").length > 0) {
+        let acooterbrand = new Swiper(".project_category_active", {
+            slidesPerView: 3,
+            loop: true,
+            rtl: false,
+            infinite: true,
+            autoplay: {
+                delay: 4000,
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                },
+                480: {
+                    slidesPerView: 2,
+                },
+                576: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    }
     // client slider end
 
     // portfolio fillter start

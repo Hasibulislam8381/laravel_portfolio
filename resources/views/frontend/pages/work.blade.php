@@ -9,17 +9,17 @@
         </div>
     </div>
 
-
     <div class="section-wrapper pr-60 pl-60 mb-60">
         <div class="row">
 
             <div class="col-12">
-                <ul class="fillter-btn-wrap buttonGroup isotop-menu-wrapper mb-30">
+                <ul class="fillter-btn-wrap buttonGroup isotop-menu-wrapper mb-30 text_left">
 
                     <li class="fillter-btn is-checked " data-filter="*">All</li>
-                    <li class="fillter-btn" data-filter=".mockup">Mockup</li>
-                    <li class="fillter-btn" data-filter=".design"> Graphic Design</li>
-                    <li class="fillter-btn" data-filter=".logo"> logo</li>
+                 @foreach($project_types as $type)
+                    <li class="fillter-btn" data-filter=".{{ strtolower(str_replace(' ', '-', $type->name)) }}">{{ $type->name }}</li>
+                @endforeach
+                    
                 </ul>
             </div>
 
@@ -27,95 +27,26 @@
                 <div id="fillter-item-active" class="fillter-item-wrap">
                     <div class="grid-sizer"></div>
 
-                    <!-- signle item -->
-                    <div class=" isotop-item mockup logo">
-                        <div class="fillter-item bg-prink">
-                            <a class="img" href="#" data-bs-toggle="modal"
-                                data-bs-target="#portfolio-1">
-                                <img src="{{ asset('public/frontend/img/work/work-img-1.png') }}" alt="">
-                            </a>
-                            <span class="item-subtitle">Travel Landing , UX/UI </span>
-                            <h6 class="item-title">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#portfolio-1">Chul
-                                    urina</a>
-                            </h6>
-                        </div>
-                    </div>
-
-                    <!-- signle item -->
-                    <div class=" isotop-item design mockup">
+                    @foreach($works as $project)
+                    @php
+                        $types = App\Models\RequirementType::where('id', $project->project_type_id)->pluck('name');
+                        $classes = strtolower(implode(' ', $types->map(fn($name) => str_replace(' ', '-', $name))->toArray()));
+                    @endphp
+                    <div class="isotop-item {{ $classes }}">
                         <div class="fillter-item bg-catkrill">
-                            <a class="img" href="#" data-bs-toggle="modal"
-                                data-bs-target="#portfolio-1">
-                                <img src="{{ asset('public/frontend/img/work/work-img-2.png') }}" alt="">
+                            <a class="img" href="{{ $project->url }}" target="_blank">
+                                <img src="{{ $project->photo }}" alt="{{ $project->alt_text }}">
                             </a>
-                            <span class="item-subtitle">Travel Landing , UX/UI </span>
+                            <span class="item-subtitle">{{ $project->language }}</span>
                             <h6 class="item-title">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#portfolio-1">Aura
-                                    Dione</a>
+                                <a href="{{ $project->url }}" target="_blank">{{ $project->name }}</a>
                             </h6>
                         </div>
                     </div>
+                @endforeach
 
-                    <!-- signle item -->
-                    <div class=" isotop-item logo mockup">
-                        <div class="fillter-item bg-catkrill ">
-                            <a class="img" href="#" data-bs-toggle="modal"
-                                data-bs-target="#portfolio-1">
-                                <img src="{{ asset('public/frontend/img/work/work-img-3.png') }}" alt="">
-                            </a>
-                            <span class="item-subtitle">Travel Landing , UX/UI </span>
-                            <h6 class="item-title">
-                                <a href="#" data-bs-toggle="modal"
-                                    data-bs-target="#portfolio-1">T-Shirt Design</a>
-                            </h6>
-                        </div>
-                    </div>
 
-                    <!-- signle item -->
-                    <div class=" isotop-item mockup">
-                        <div class="fillter-item bg-prink">
-                            <a class="img" href="#" data-bs-toggle="modal"
-                                data-bs-target="#portfolio-1">
-                                <img src="{{ asset('public/frontend/img/work/work-img-4.png') }}" alt="">
-                            </a>
-                            <span class="item-subtitle">Travel Landing , UX/UI </span>
-                            <h6 class="item-title">
-                                <a href="#" data-bs-toggle="modal"
-                                    data-bs-target="#portfolio-1">Packaging Box</a>
-                            </h6>
-                        </div>
-                    </div>
-
-                    <!-- signle item -->
-                    <div class="isotop-item design logo">
-                        <div class="fillter-item bg-prink">
-                            <a class="img" href="#" data-bs-toggle="modal"
-                                data-bs-target="#portfolio-1">
-                                <img src="{{ asset('public/frontend/img/work/work-img-5.png') }}" alt="">
-                            </a>
-                            <span class="item-subtitle">Travel Landing , UX/UI </span>
-                            <h6 class="item-title">
-                                <a href="#" data-bs-toggle="modal"
-                                    data-bs-target="#portfolio-1">Modern Bag Design</a>
-                            </h6>
-                        </div>
-                    </div>
-
-                    <!-- signle item -->
-                    <div class="isotop-item mockup design">
-                        <div class="fillter-item bg-catkrill">
-                            <a class="img" href="#" data-bs-toggle="modal"
-                                data-bs-target="#portfolio-1">
-                                <img src="{{ asset('public/frontend/img/work/work-img-6.png') }}" alt="">
-                            </a>
-                            <span class="item-subtitle">Travel Landing , UX/UI </span>
-                            <h6 class="item-title">
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#portfolio-1">Chul
-                                    urina</a>
-                            </h6>
-                        </div>
-                    </div>
+                   
 
                 </div>
 
